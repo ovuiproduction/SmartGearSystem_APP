@@ -27,8 +27,6 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String url = "https://api.thingspeak.com/channels/2453090/feeds.json";
-    private  final String appId = "YU7NXINJ4E9PMM06";
     Button btnGetInfo;
     TextView textViewDisplayResult;
 
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void getInfo() {
         String tempUrl = "";
-        tempUrl = "https://api.thingspeak.com/channels/2473881/feeds.json?api_key=W9WVHO2HLG3529ND&results=1";
+        tempUrl = "https://api.thingspeak.com/channels/<Your_CHANNEL_ID>/feeds.json?api_key=<YOUR_API_KEY>&results=1";
         StringRequest stringRequest = new StringRequest(Request.Method.GET,tempUrl,new Response.Listener<String>(){
             @Override
             public void onResponse(String response){
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void executeSecondRequest() {
-        String tempUrl2 = "https://api.thingspeak.com/channels/2474051/fields/1.json?api_key=TD3J8PIMHAY1Y0L5&results=1";
+        String tempUrl2 = "https://api.thingspeak.com/channels/<Your_CHANNEL_ID>/fields/1.json?api_key=<YOUR_API_KEY>&results=1";
         StringRequest stringRequest2 = new StringRequest(Request.Method.GET, tempUrl2, new Response.Listener<String>() {
             @SuppressLint("SetTextI18n")
             @Override
